@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint src --fix"
   },
   "dependencies": {
     "next": "latest",
@@ -21,6 +22,7 @@
     "@types/node": "^18.6.3",
     "@types/react": "^18.0.15",
     "@types/react-dom": "18.0.5",
+    "eslint": "^8.21.0",
     "autoprefixer": "^10.4.7",
     "config": "*",
     "postcss": "^8.4.14",
