@@ -1,4 +1,4 @@
- {
+{
   "name": "my-turborepo",
   "version": "0.0.0",
   "private": true,
@@ -9,42 +9,58 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "test": "turbo run test",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install"
   },
-   "turbo": {
-     "pipeline": {
-       "build": {
-         "dependsOn": [
-           "^build"
-         ],
-         "outputs": [
-           "dist/**",
-           ".next/**"
-         ]
-       },
-       "test": {
-         "dependsOn": [
-           "^build"
-         ],
-         "outputs": [
-           "coverage/**"
-         ]
-       },
-       "lint": {
-         "outputs": []
-       },
-       "dev": {
-         "cache": false
-       }
-     }
-   },
+  "turbo": {
+    "pipeline": {
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "dist/**",
+          ".next/**"
+        ]
+      },
+      "test": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "coverage/**"
+        ]
+      },
+      "test": {},
+      "lint": {
+        "outputs": []
+      },
+      "dev": {
+        "cache": false
+      }
+    }
+  },
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "packages/ui/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
     "eslint-config-custom": "*",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "latest",
     "turbo": "latest"
   },
-   "engines": {
+  "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
