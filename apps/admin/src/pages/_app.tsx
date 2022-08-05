@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const AnyComponent = Component as any;
-  console.log("supp ggg")
   return <AnyComponent {...pageProps} />;
 }
 
