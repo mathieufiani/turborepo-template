@@ -4,8 +4,10 @@
     "rootDir": ".",
     "outDir": "dist",
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "types": ["jest"]
   },
+
   "include": ["src/**/*.ts", "test/**/*.ts"],
   "exclude": ["node_modules"]
 }
