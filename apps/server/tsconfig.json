@@ -5,8 +5,7 @@
     "outDir": "dist",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "types": ["jest"],
-    "typeRoots": ["./types", "./node_modules/@types"]
+    "types": ["jest"]
   },
 
   "include": ["src/**/*.ts", "test/**/*.ts"],
